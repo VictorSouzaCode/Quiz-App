@@ -98,13 +98,10 @@ const Sports = () => {
 
   }, [remainingTime])
 
-  // i want to change the points color very briefly when a make or lose a point, if i make a point the color is blue if i lose a point the color should be red and then it goes backs to normal color, and this should happen when i use the button confirm
-
-
   return (
     <>
     <div className="flex justify-center min-h-svh bg-slate-900">
-      <div className="w-full lg:max-w-[50%] shadow-2xl shadow-black flex flex-col justify-between">
+      <div className="w-full min-h-svh lg:max-w-[50%] shadow-2xl shadow-black flex flex-col justify-between">
 
         <header className="h-28 flex justify-between text-xl font-medium px-12 py-5 bg-[#04BF55]">
         <Link to="/" className="grid place-content-center rounded-xl min-w-[80px] bg-[#F2A74B]" >
@@ -128,7 +125,7 @@ const Sports = () => {
           animate={controls}>{totalPoints}</motion.p>
         </header>
 
-        <main className="flex-grow px-10 flex flex-col items-center py-10 gap-y-5 bg-[#91D996] font-medium">
+        <main className="flex-grow px-10 flex flex-col items-center py-10 gap-y-5 bg-[#91D996] font-medium h-full">
 
           <div className="w-full max-w-[75%] p-5 rounded-xl bg-[#F2A74B] shadow-lg flex justify-center wordSpacing">
             <p className="text-2xl text-center">{quizQuestion ? quizQuestion.question.text : 'loading'}</p>
