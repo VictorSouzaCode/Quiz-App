@@ -6,7 +6,7 @@ import { motion } from "motion/react"
 
 const Body = () => {
   return (
-        <div className="flex-grow w-full grid grid-cols-2 p-3 gap-3 rounded-t-3xl bg-teal-400">
+        <div className="flex-grow w-full grid grid-cols-2 p-3 gap-3 rounded-t-3xl bg-teal-400 h-full">
 
           <motion.div className="rounded-3xl shadow-md bg-teal-600 flex items-center justify-center text-3xl font-medium cursor-pointer"
           whileHover={{

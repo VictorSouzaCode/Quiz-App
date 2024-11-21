@@ -100,9 +100,9 @@ const Movies = () => {
   return (
     <>
     <div className="flex justify-center min-h-svh bg-slate-900">
-      <div className="w-full lg:max-w-[50%] shadow-2xl shadow-black flex flex-col justify-between">
+      <div className="w-full lg:max-w-[50%] shadow-2xl shadow-black flex flex-col justify-between min-h-svh">
 
-        <header className="h-28 flex justify-between text-xl font-medium px-12 py-5 bg-[#757074]">
+        <header className="min-h-28 flex justify-between text-xl font-medium px-12 py-5 bg-[#757074]">
         <Link to="/" className="grid place-content-center rounded-xl min-w-[70px] bg-[#D7DBDE]" >
           Home
         </Link>
@@ -124,7 +124,7 @@ const Movies = () => {
           animate={controls}>{totalPoints}</motion.p>
         </header>
 
-        <main className="flex-grow px-10 flex flex-col items-center py-10 gap-y-5 bg-[#C7C0BA] font-medium">
+        <main className="flex-grow px-10 flex flex-col items-center py-10 gap-y-5 bg-[#C7C0BA] font-medium h-full">
         <div className="w-full max-w-[85%] p-5 rounded-xl bg-[#D7DBDE] shadow-lg flex justify-center wordSpacing lg:max-w-[75%]">
             <p className="text-2xl text-center">{quizQuestion ? quizQuestion.question.text : 'loading' }</p>
           </div>
@@ -151,7 +151,7 @@ const Movies = () => {
           }) : <p className="text-4xl mt-36 font-bold">'Loading'</p>}
         </main>
 
-        <footer className="h-20 flex justify-center bg-[#757074] py-2">
+        <footer className="min-h-20 flex justify-center bg-[#757074] py-2">
           <button className=" hover:cursor-pointer text-2xl font-medium rounded-lg p-5 grid place-content-center bg-[#D7DBDE]" onClick={() => {
             if(!selectedAnswer) {
               alert('Please select an answer') 

@@ -99,9 +99,9 @@ const Science = () => {
 
   return (
     <div className="flex justify-center min-h-svh bg-slate-900">
-      <div className="w-full lg:max-w-[50%] shadow-2xl shadow-black flex flex-col justify-between">
+      <div className="w-full lg:max-w-[50%] shadow-2xl shadow-black flex flex-col justify-between min-h-svh">
 
-        <header className="h-28 flex justify-between text-xl font-medium px-12 py-5 bg-[#385DA6]">
+        <header className="min-h-28 flex justify-between text-xl font-medium px-12 py-5 bg-[#385DA6]">
         <Link to="/" className="grid place-content-center rounded-xl min-w-[70px] bg-[#91D7F2]" >
           Home
         </Link>
@@ -123,7 +123,7 @@ const Science = () => {
           animate={controls}>{totalPoints}</motion.p>
         </header>
 
-        <main className="flex-grow px-10 flex flex-col items-center py-10 gap-y-5 bg-[#5A90BF] font-medium">
+        <main className="flex-grow px-10 flex flex-col items-center py-10 gap-y-5 bg-[#5A90BF] font-medium h-full">
           <div className="w-full max-w-[85%] lg:max-w-[75%] p-5 rounded-xl bg-[#91D7F2] shadow-lg">
             <p className="text-2xl">{quizQuestion ? quizQuestion.question.text : 'loading' }</p>
           </div>
@@ -150,7 +150,7 @@ const Science = () => {
           }) : <p className="text-4xl mt-36 font-bold">'Loading'</p>}
         </main>
 
-        <footer className="h-20 flex justify-center bg-[#385DA6] py-2">
+        <footer className="min-h-20 flex justify-center bg-[#385DA6] py-2">
           <button className=" hover:cursor-pointer text-2xl font-medium rounded-lg p-5 grid place-content-center bg-[#91D7F2]" onClick={() => {
             if(!selectedAnswer) {
               alert('Please select an answer') 

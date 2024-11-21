@@ -103,7 +103,7 @@ const Sports = () => {
     <div className="flex justify-center min-h-svh bg-slate-900">
       <div className="w-full min-h-svh lg:max-w-[50%] shadow-2xl shadow-black flex flex-col justify-between">
 
-        <header className="h-28 flex justify-between text-xl font-medium px-12 py-5 bg-[#04BF55]">
+        <header className="min-h-28 flex justify-between text-xl font-medium px-12 py-5 bg-[#04BF55]">
         <Link to="/" className="grid place-content-center rounded-xl min-w-[80px] bg-[#F2A74B]" >
           Home
         </Link>
@@ -149,7 +149,7 @@ const Sports = () => {
         </main>
         
 
-        <footer className="h-20 flex justify-center bg-[#04BF55] py-2">
+        <footer className="min-h-20 flex justify-center bg-[#04BF55] py-2">
           <button className=" hover:cursor-pointer text-2xl font-medium rounded-lg p-5 grid place-content-center bg-[#F2A74B]" onClick={() => {
             if(!selectedAnswer) {
               alert('Please select an answer') 
