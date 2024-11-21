@@ -1,0 +1,1 @@
+{"root":["./src/App.tsx","./src/main.tsx","./src/vite-env.d.ts","./src/components/Body.tsx","./src/components/Header.tsx","./src/components/RouteTracker.tsx","./src/pages/General.tsx","./src/pages/Movies.tsx","./src/pages/Science.tsx","./src/pages/Sports.tsx","./src/state/quizStore.ts","./src/state/majorFunctionalities/majorFunctionalities.ts"],"version":"5.6.3"}
