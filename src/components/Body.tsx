@@ -3,6 +3,9 @@
 import { Link } from "react-router-dom"
 import { motion } from "motion/react"
 
+// First i will create another branch
+// Second i will see How to properly structure the folders
+// Then i will create some reusable components
 
 const Body = () => {
   return (
