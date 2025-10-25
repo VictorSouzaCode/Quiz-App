@@ -1,7 +1,11 @@
 
+type CategoryChoiceTypes = {
+    id: number,
+    route: string,
+    render: string
+}[]
 
-
-export const categoryChoice = [
+export const categoryChoice:CategoryChoiceTypes = [
     {
         id: 1,
         route: "sports",

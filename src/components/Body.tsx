@@ -1,7 +1,3 @@
-
-
-import { Link } from "react-router-dom"
-import { motion } from "motion/react"
 import { CategoryContainer } from "../shared/ui"
 import { categoryChoice } from "../data/categoryChoice"
 
