@@ -3,7 +3,7 @@ import { categoryChoice } from "../data/categoryChoice"
 
 const Body = () => {
   return (
-        <div className="flex-grow w-full grid grid-cols-2 p-3 gap-3 rounded-t-3xl bg-teal-400 h-full">
+        <div className="flex-1 w-full grid grid-cols-2 p-3 gap-3 rounded-t-3xl bg-teal-400">
 
           {categoryChoice.map((category) => (
             <CategoryContainer 

@@ -47,5 +47,5 @@ createRoot(document.getElementById('root')!).render(
     <Provider store={quizStore}>
     <RouterProvider router={myCustomRouter} />
     </Provider>
-  </StrictMode>,
+    </StrictMode>
 )
