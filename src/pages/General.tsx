@@ -5,6 +5,8 @@ import { fetchQuestion, shuffle, handlingAnswersChoice, handlingPoints, decremen
 import { useDispatch, useSelector } from "react-redux"
 import { RootState, AppDispatch } from "../state/quizStore"
 import { motion, useAnimationControls } from "motion/react"
+import { AppLayout } from "../layout/AppLayout"
+import { QuizTemplate } from "../template/QuizTemplate"
 
 
 const General = () => {
@@ -99,8 +101,8 @@ const General = () => {
 
 
   return (
-    <div className="flex justify-center min-h-svh bg-slate-900">
-      <div className="w-full lg:max-w-[50%] shadow-2xl shadow-black flex flex-col justify-between min-h-svh">
+    <AppLayout>
+      <QuizTemplate>
 
         <header className="min-h-28 flex justify-between text-xl font-medium px-12 py-5 bg-[#59472C]">
         <Link to="/" className="grid place-content-center rounded-xl min-w-[70px] bg-[#E1C38F]" >
@@ -124,7 +126,7 @@ const General = () => {
           animate={controls}>{totalPoints}</motion.p>
         </header>
 
-        <main className="flex-grow px-10 flex flex-col items-center py-10 gap-y-5 bg-[#91764E] font-medium h-full">
+        <main className="flex-1 px-10 flex flex-col items-center py-10 gap-y-5 bg-[#91764E] font-medium h-full">
           <div className="w-full max-w-[85%] lg:max-w-[75%] p-5 rounded-xl bg-[#E1C38F] shadow-lg">
             <p className="text-2xl">{quizQuestion ? quizQuestion.question.text : 'loading' }</p>
           </div>
@@ -174,8 +176,8 @@ const General = () => {
           }} >Confirm</button>
         </footer>
 
-      </div>
-    </div>
+      </QuizTemplate>
+    </AppLayout>
   )
 }
 

@@ -1,0 +1,15 @@
+
+type AppLayoutProps = {
+  children: React.ReactNode
+}
+
+export const AppLayout = ({
+  children,
+
+}:AppLayoutProps) => {
+  return (
+    <div className="min-h-screen flex justify-center bg-slate-900">
+      {children}
+      </div>
+  )
+}

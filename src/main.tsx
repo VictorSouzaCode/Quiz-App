@@ -11,15 +11,6 @@ import { quizStore } from './state/quizStore.ts'
 import { Provider } from 'react-redux'
 import RouteTracker from './components/RouteTracker.tsx'
 
-/* Quiz App with Score Tracking, AI instructions
-
-Concepts: Redux to manage user interactions, data flow, and state updates across multiple screens.
-
-Challenge: Create a quiz application where users can answer multiple-choice questions. Use Redux to manage the current question, track the user's answers, and show the final score.
-
-Extensions: Add features like difficulty levels, time limits for each question, or saving progress.
-
-*/
 
 const myCustomRouter = createBrowserRouter([
   {
@@ -56,5 +47,5 @@ createRoot(document.getElementById('root')!).render(
     <Provider store={quizStore}>
     <RouterProvider router={myCustomRouter} />
     </Provider>
-  </StrictMode>,
+    </StrictMode>
 )
