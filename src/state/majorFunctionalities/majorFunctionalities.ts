@@ -2,8 +2,20 @@
 
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 
+// use redux for:
+// Global shared state (app-wide)
+// Cross-feature communication
+// Derived or computed global state (selectors)
+// share state across many unrelated components.
+// You need server state + client state coordination (e.g., saving answers while fetching new ones).
+// You want centralized logic for important features like score calculation, timers, etc.
+// Maybe use hook + redux in Complex side effects or reusable logic (e.g., fetching, timers, forms).
+// Combining Both (Best Practice)
+// Professionals often combine both:
+// Redux manages data/state.
+// Hooks manage logic/behavior.
 
-type QuestionBuilder = {
+export type QuestionBuilder = {
     category: string,
     correctAnswer: string,
     difficulty: string,
@@ -18,19 +30,19 @@ type QuestionBuilder = {
     type: string,
 }
 
-type HandlingData = {
+export type HandlingData = {
     chosenAnswerValue: string,
     storedChosenAnswer: string[],
     allAnswers: string[],
     remaningTime: number,
 }
 
-type fetchQuestionParams = {
+export type fetchQuestionParams = {
     category: string,
     difficulty: string,
 }
 
-type MajorFunctions = {
+export type MajorFunctions = {
     quizData: {
         fullQuestion: QuestionBuilder | null,
         status: "idle" | "loading" | "succeeded",
@@ -45,7 +57,7 @@ type MajorFunctions = {
 }
 
 
-const initialState: MajorFunctions = {
+export const initialState: MajorFunctions = {
     quizData: {
         fullQuestion: null,
         status: "idle",

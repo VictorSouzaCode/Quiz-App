@@ -7,9 +7,10 @@ import Sports from './pages/Sports.tsx'
 import Movies from './pages/Movies.tsx'
 import Science from './pages/Science.tsx'
 import General from './pages/General.tsx'
+import TestPage from './pages/TestPage.tsx'
 import { quizStore } from './state/quizStore.ts'
 import { Provider } from 'react-redux'
-import RouteTracker from './components/RouteTracker.tsx'
+import RouteTracker from './features/quiz/routeTracker/RouteTracker.tsx'
 
 
 const myCustomRouter = createBrowserRouter([
@@ -36,6 +37,10 @@ const myCustomRouter = createBrowserRouter([
       {
         path: "/general",
         element: <General/>
+      },
+      {
+        path: "/general",
+        element: <TestPage/>
       }
       
     ]
