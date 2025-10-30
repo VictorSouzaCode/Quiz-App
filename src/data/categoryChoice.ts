@@ -25,10 +25,5 @@ export const categoryChoice:CategoryChoiceTypes = [
         id: 4,
         route: "science",
         render: "Science"
-    },
-    {
-        id: 5,
-        route: "general",
-        render: "Test"
-    },
+    }
 ]
