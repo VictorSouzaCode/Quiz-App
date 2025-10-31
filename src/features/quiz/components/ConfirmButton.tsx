@@ -6,6 +6,7 @@ type ConfirmButtonProps = {
     category: string,
     difficulty: string,
     selectedAnswer: string | undefined,
+    correctAnswer: string | undefined,
     handleAnimationOnClick: () => void,
 }
 
@@ -14,10 +15,12 @@ export const ConfirmButton = ({
     category,
     difficulty,
     selectedAnswer,
+    correctAnswer,
     handleAnimationOnClick,
 
 }: ConfirmButtonProps) => {
-    const handleConfirm = useConfirmAnswer(category, difficulty, selectedAnswer, handleAnimationOnClick)
+  
+    const handleConfirm = useConfirmAnswer(category, difficulty, selectedAnswer, correctAnswer, handleAnimationOnClick)
 
   return (
     <Button variant={variant} onClick={handleConfirm}

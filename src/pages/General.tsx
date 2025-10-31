@@ -49,6 +49,7 @@ const General = () => {
             category={category}
             difficulty={difficulty}
             selectedAnswer={selectedAnswer}
+            correctAnswer={quizQuestion?.correctAnswer}
             handleAnimationOnClick={handleAnimationOnClick} />
         </QuizFooter>
 

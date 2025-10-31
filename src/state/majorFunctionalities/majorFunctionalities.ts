@@ -70,6 +70,9 @@ export const initialState: MajorFunctions = {
     generalPoints: 0,
 }
 
+// action payload type
+type PointsPayload = { category: string, selectedAnswer: string, correctAnswer: string | undefined}
+
 
 const majorFunctions = createSlice({
     name: "mainFunctions",
@@ -96,100 +99,27 @@ const majorFunctions = createSlice({
 
             }
         },
-        handlingPoints: (state) => {
+        handlingPoints: (state, action: PayloadAction<PointsPayload >) => {
 
-            function filmTvPoints (): void {
+            const { category, selectedAnswer, correctAnswer} = action.payload
 
-                if(state.storedData && state.quizData.fullQuestion?.category === 'film_and_tv') {
+            const delta = selectedAnswer === correctAnswer ? 20 : -20;
 
-                    if(state.storedData.chosenAnswerValue === state.quizData.fullQuestion?.correctAnswer) {
-
-                        state.fimTvPoints += 20
-    
-                    } else {
-    
-                        if(state.fimTvPoints === 0) {
-    
-                            state.fimTvPoints === 0
-    
-                        } else {
-    
-                            state.fimTvPoints -= 20
-                        }
-                    }
-                }
+            switch (category) {
+                case "film_and_tv":
+                    state.fimTvPoints = Math.max(0, state.fimTvPoints + delta);
+                    break;
+                case "sport_and_leisure":
+                    state.sportsPoints = Math.max(0, state.sportsPoints + delta);
+                    break;
+                case "science":
+                    state.sciencePoints = Math.max(0, state.sciencePoints + delta);
+                    break;
+                case "general_knowledge":
+                    state.generalPoints = Math.max(0, state.generalPoints + delta);
+                    break;
             }
 
-            function sportPoints (): void {
-
-                if(state.storedData && state.quizData.fullQuestion?.category === "sport_and_leisure") {
-
-                    if(state.storedData.chosenAnswerValue === state.quizData.fullQuestion?.correctAnswer) {
-
-                        state.sportsPoints += 20
-    
-                    } else {
-    
-                        if(state.sportsPoints === 0) {
-    
-                            state.sportsPoints === 0
-    
-                        } else {
-    
-                            state.sportsPoints -= 20
-                        }
-                    }
-                }
-            }
-
-            function sciencePoints (): void {
-
-                if(state.storedData && state.quizData.fullQuestion?.category === "science") {
-
-                    if(state.storedData.chosenAnswerValue === state.quizData.fullQuestion?.correctAnswer) {
-
-                        state.sciencePoints += 20
-    
-                    } else {
-    
-                        if(state.sciencePoints === 0) {
-    
-                            state.sciencePoints === 0
-    
-                        } else {
-    
-                            state.sciencePoints -= 20
-                        }
-                    }
-                }
-            }
-
-            function generalPoints (): void {
-
-                if(state.storedData && state.quizData.fullQuestion?.category === "general_knowledge") {
-
-                    if(state.storedData.chosenAnswerValue === state.quizData.fullQuestion?.correctAnswer) {
-
-                        state.generalPoints += 20
-    
-                    } else {
-    
-                        if(state.generalPoints === 0) {
-    
-                            state.generalPoints === 0
-    
-                        } else {
-    
-                            state.generalPoints -= 20
-                        }
-                    }
-                }
-            }
-
-            filmTvPoints()
-            sportPoints()
-            sciencePoints()
-            generalPoints()
         },
         decrementTimer: (state) => {
 

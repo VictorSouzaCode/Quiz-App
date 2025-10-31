@@ -10,7 +10,7 @@ import { useQuizLogic } from "../features/quiz/hooks/useQuizLogic"
 const Movies = () => {
 
   const category = 'film_and_tv';
-  const routeCategory = 'movies'
+  const routeCategory = 'movies';
 
   const {
     quizQuestion,
@@ -49,6 +49,7 @@ const Movies = () => {
                 category={category}
                 difficulty={difficulty}
                 selectedAnswer={selectedAnswer}
+                correctAnswer={quizQuestion?.correctAnswer}
                 handleAnimationOnClick={handleAnimationOnClick} />
             </QuizFooter>
     
