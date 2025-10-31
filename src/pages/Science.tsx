@@ -37,6 +37,7 @@ const Science = () => {
         />
 
         <QuizMainSection
+          variant="science"
           quizQuestion={quizQuestion}
           allAnswers={allAnswers}
           selectedAnswer={selectedAnswer}

@@ -38,6 +38,7 @@ const Movies = () => {
             />
     
             <QuizMainSection
+              variant="movies"
               quizQuestion={quizQuestion}
               allAnswers={allAnswers}
               selectedAnswer={selectedAnswer}

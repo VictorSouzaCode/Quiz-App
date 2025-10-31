@@ -37,6 +37,7 @@ const Sports = () => {
         />
 
         <QuizMainSection
+          variant="sports"
           quizQuestion={quizQuestion}
           allAnswers={allAnswers}
           selectedAnswer={selectedAnswer}

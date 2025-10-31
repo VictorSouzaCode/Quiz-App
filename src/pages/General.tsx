@@ -9,8 +9,8 @@ import { useQuizLogic } from "../features/quiz/hooks/useQuizLogic"
 
 const General = () => {
 
-  const category = 'general_knowledge'
-  const routeCategory = 'general'
+  const category = 'general_knowledge';
+  const routeCategory = 'general';
 
   const {
     quizQuestion,
@@ -38,6 +38,7 @@ const General = () => {
         />
 
         <QuizMainSection
+          variant="general"
           quizQuestion={quizQuestion}
           allAnswers={allAnswers}
           selectedAnswer={selectedAnswer}
