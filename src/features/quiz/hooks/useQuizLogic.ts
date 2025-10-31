@@ -17,7 +17,7 @@ import { useMemo } from "react"
 
 
 
-export const useQuizLogic = (category:string) => {
+export const useQuizLogic = (category:string, routeCategory: string) => {
     const dispatch = useDispatch()
     const asyncDispatch = useDispatch<AppDispatch>()
     const controls = useAnimationControls()
@@ -30,7 +30,15 @@ export const useQuizLogic = (category:string) => {
 
     const selectedAnswer = useSelector((state: RootState) => state.majorFunctions.storedData?.storedChosenAnswer[0])
 
-    const totalPoints = useSelector((state: RootState) => state.majorFunctions.generalPoints)
+    const totalPoints = useSelector((state: RootState) => {
+        switch (category) {
+            case "film_and_tv": return state.majorFunctions.fimTvPoints;
+            case "sport_and_leisure": return state.majorFunctions.sportsPoints;
+            case "science": return state.majorFunctions.sciencePoints;
+            case "general_knowledge": return state.majorFunctions.generalPoints;
+            default: return 0;
+        }
+    })
 
     let remainingTime = useSelector((state: RootState) => state.majorFunctions.storedData?.remaningTime)
 
@@ -49,6 +57,7 @@ export const useQuizLogic = (category:string) => {
         return 'unknown'
     }
    },[totalPoints]) // Only recalculates when totalPoints changes
+   
 
     // Fetch + shuffle logic
     const fetchAndShuffle = async () => {
@@ -60,7 +69,7 @@ export const useQuizLogic = (category:string) => {
 
     // Initial fetch
     useEffect(() => {
-        if (currentLocation === `/${category}`) {
+        if (currentLocation === `/${routeCategory}`) {
             fetchAndShuffle()
         }
     }, [currentLocation])

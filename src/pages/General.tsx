@@ -9,7 +9,8 @@ import { useQuizLogic } from "../features/quiz/hooks/useQuizLogic"
 
 const General = () => {
 
-  const category = 'general'
+  const category = 'general_knowledge'
+  const routeCategory = 'general'
 
   const {
     quizQuestion,
@@ -20,8 +21,7 @@ const General = () => {
     difficulty,
     controls,
     handleAnimationOnClick,
-  } = useQuizLogic(category)
-
+  } = useQuizLogic(category, routeCategory)
 
 
   return (

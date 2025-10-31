@@ -16,6 +16,9 @@ export const QuizMainSection = ({
 }:QuizMainSectionProps) => {
     const dispatch = useDispatch()
 
+    // movies body color #C7C0BA
+    // movies answers color #D7DBDE
+
   return (
     <main className="flex-1 px-10 flex flex-col items-center py-10 gap-y-5 bg-[#91764E] font-medium h-full">
         <div className="w-full max-w-[85%] lg:max-w-[75%] p-5 rounded-xl bg-[#E1C38F] shadow-lg">

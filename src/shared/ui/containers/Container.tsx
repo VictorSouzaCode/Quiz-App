@@ -18,7 +18,7 @@ const ContainerVariants = cva(
             variant: {
                 default: "bg-white",
                 general: "bg-[#E1C38F]",
-                movies: "bg-[#757074]",
+                movies: "bg-[#D7DBDE]",
                 science: "bg-[#385DA6]",
                 sports: "bg-[#04BF55]",
             },
@@ -43,7 +43,7 @@ export const Container = ({
 
 }:ContainerProps) => {
   return (
-    <div  className={cn(ContainerVariants({className, variant, size}))}>
+    <div  className={cn(ContainerVariants({variant, size, className}))}>
         {children}
     </div>
   )
