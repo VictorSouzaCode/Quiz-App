@@ -4,7 +4,7 @@ import { cva } from "class-variance-authority";
 type QuizHeaderProps = {
     className?: string,
     variant?: "default" | "general" | "movies" | "science" | "sports",
-    children?                                                                                                                                                              : React.ReactNode
+    children?: React.ReactNode
 }
 
 const headerCva = cva(
@@ -15,8 +15,8 @@ const headerCva = cva(
         default: "bg-white",
         general: "bg-[#59472C]",
         movies: "bg-[#757074]",
-        science: "bg-[#91D7F2]",
-        sports: "bg-[#F2A74B]"
+        science: "bg-[#385DA6]",
+        sports: "bg-[#04BF55]"
       }
     },
     defaultVariants: {

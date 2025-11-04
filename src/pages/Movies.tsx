@@ -6,7 +6,6 @@ import { QuizHeaderSection } from "../features/quiz/components/QuizHeaderSection
 import { QuizMainSection } from "../features/quiz/components/QuizMainSection"
 import { useQuizLogic } from "../features/quiz/hooks/useQuizLogic"
 
-
 const Movies = () => {
 
   const category = 'film_and_tv';

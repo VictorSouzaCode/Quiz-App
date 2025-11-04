@@ -11,7 +11,6 @@ type QuizMainSectionProps = {
     selectedAnswer: string | undefined,
 }
 
-// next i need to ajust the colors according with the page that i am in
 
 export const QuizMainSection = ({
     variant,

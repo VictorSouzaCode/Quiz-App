@@ -1,6 +1,7 @@
 
 
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
+import type { QuestionBuilder, fetchQuestionParams, MajorFunctions } from "../../features/quiz/types/quizTypes";
 
 // use redux for:
 // Global shared state (app-wide)
@@ -14,47 +15,6 @@ import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 // Professionals often combine both:
 // Redux manages data/state.
 // Hooks manage logic/behavior.
-
-export type QuestionBuilder = {
-    category: string,
-    correctAnswer: string,
-    difficulty: string,
-    id: string,
-    incorrectAnswers: string[],
-    isNiche: boolean,
-    question: {
-        text: string
-    },
-    regions: string | undefined[],
-    tags: string[],
-    type: string,
-}
-
-export type HandlingData = {
-    chosenAnswerValue: string,
-    storedChosenAnswer: string[],
-    allAnswers: string[],
-    remaningTime: number,
-}
-
-export type fetchQuestionParams = {
-    category: string,
-    difficulty: string,
-}
-
-export type MajorFunctions = {
-    quizData: {
-        fullQuestion: QuestionBuilder | null,
-        status: "idle" | "loading" | "succeeded",
-    },
-    storedData: HandlingData | null,
-    currentPath: string,
-    fimTvPoints: number,
-    sportsPoints: number,
-    sciencePoints: number,
-    generalPoints: number,
-
-}
 
 
 export const initialState: MajorFunctions = {
@@ -216,7 +176,7 @@ const majorFunctions = createSlice({
 
 
 export const fetchQuestion = createAsyncThunk<QuestionBuilder, fetchQuestionParams>(
-    "fetchTrivaQuestion",
+    "quiz/fetchTrivaQuestion",
     async ({category, difficulty}) => {
 
         const triviaURL = `https://the-trivia-api.com/v2/questions?difficulties=${difficulty}&categories=${category}&limit=1`;

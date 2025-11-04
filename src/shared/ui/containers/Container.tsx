@@ -19,8 +19,8 @@ const ContainerVariants = cva(
                 default: "bg-white",
                 general: "bg-[#E1C38F]",
                 movies: "bg-[#D7DBDE]",
-                science: "bg-[#385DA6]",
-                sports: "bg-[#04BF55]",
+                science: "bg-[#91D7F2]",
+                sports: "bg-[#F2A74B]",
             },
             size: {
                 sm: "min-w-[30px]",
